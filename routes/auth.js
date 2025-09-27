@@ -8,7 +8,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 
 router.post("/signup", async (req, res) => {
   const { email, display_name, timezone, password} = req.body;
-  console.log(req.body);
+
   const hash = await bcrypt.hash(password, 10);
 
   const result = await pool.query(
